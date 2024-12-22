@@ -1,4 +1,3 @@
-import { application } from "express";
 import { Application } from "../models/application.model.js";
 import { Job } from "../models/job.model.js";
 
@@ -34,7 +33,7 @@ export const applyJob = async (req, res) => {
     //create a new application...
     const newApplication = await Application.create({
       job: jobId,
-      applicant: userId,
+      applicant: userId,   
     });
     job.applications.push(newApplication._id);
     await job.save();
